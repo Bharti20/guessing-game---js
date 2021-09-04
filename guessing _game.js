@@ -3,10 +3,9 @@ console.log('------------------ Welcome to the Guessing Game! -----------------'
 const input = require('readline-sync')
 let numbers = [1,2,3,4,5,6,7,8,9,10]
 let computerSelect = numbers[Math.floor(Math.random()*numbers.length)]
-console.log(computerSelect);
 let lives = 5
 while(lives>0) {
-    let userInput = input.question('gusse a number----')
+    let userInput = input.question('gusse a number between 1 to 10 ----')
     if(userInput == computerSelect) {
         console.log('You won!')
         break;
@@ -17,6 +16,7 @@ while(lives>0) {
     }
     if(lives == 0){
         console.log('Sorry you loose the game. Try next time')
+        console.log(`The number was:- ${computerSelect}`)
         break;
     }
 }
